@@ -1,0 +1,18 @@
+---
+- hosts: all
+  tasks:
+
+          - name: grant the zero  permissions on the  index.html file in  the web servers
+            file:  dest=/var/www/html/index.html    mode=000
+
+          - name: delete the index.html file on the web servers
+            file: dest=/var/www/html/index.html   state=absent
+
+          - name: disable the http srervice
+            service: name=httpd  enabled=no
+
+          - name: stop  the http srervice
+            service: name=httpd  state=stopped
+
+          - name: remove the  http package
+            yum:  name=httpd  state=absent
