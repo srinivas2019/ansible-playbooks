@@ -1,0 +1,23 @@
+---
+- hosts: all
+  tasks: 
+             - name: delete a user 
+               user:
+                       name: rohith 
+                       state: absent 
+
+             - name: delete a second  user 
+               user:
+                       name: gopi 
+                       state: absent 
+
+             - name: delete a group 
+               group:
+                       name: devops
+                       state: absent 
+
+
+             - name: delete a file  
+               file:
+                       path: /opt/aws
+                       state: absent 

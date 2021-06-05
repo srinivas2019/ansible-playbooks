@@ -1,0 +1,12 @@
+---
+- hosts: all
+  tasks: 
+          - name: create a multi users with loop method 
+            group:
+                   name: "{{ item }}"
+                   state: present
+            loop:
+                    - oracle
+                    - java
+                    - ruby
+                    - groovy 

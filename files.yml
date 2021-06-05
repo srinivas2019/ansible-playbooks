@@ -1,0 +1,14 @@
+---
+- hosts: all
+  tasks:
+          - name: creating files on the target systems 
+            file:
+                    path: /opt/aws/devops
+                    state: directory
+                    mode: 777 
+
+          - name: creating files on the target systems 
+            file:
+                    path: /opt/aws/devops/docker
+                    state: touch 
+                    mode: 700

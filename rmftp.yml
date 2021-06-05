@@ -1,0 +1,23 @@
+---
+- hosts: all
+  tasks: 
+
+          - name: grant the zero  permissions on the  index.html file in  the ftp  servers
+            file:  dest=/var/ftp/pub/index.html    mode=000
+
+          - name: delete the index.html file on the ftp  servers
+            file: dest=/var/ftp/pub/index.html   state=absent  
+          
+          - name: disable the ftp  srervice
+            service: name=vsftpd  enabled=no
+          
+          - name: stop  the ftp  srervice
+            service: name=vsftpd  state=stopped 
+          
+          - name: remove the  ftp package
+            yum:  name=vsftpd  state=absent 
+
+
+
+
+

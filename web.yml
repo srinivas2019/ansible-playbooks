@@ -1,9 +1,9 @@
 ---
 - hosts: all
-  tasks:
+  tasks: 
 
           - name: install http package
-            yum:  name=httpd  state=latest
+            yum:  name=httpd  state=latest 
 
 
           - name: start the http srervice
@@ -13,7 +13,7 @@
             service: name=httpd  enabled=yes
 
           - name: copy the index.html file on the web servers
-            copy: src=/root/index.html   dest=/var/www/html
+            copy: src=/root/index.html   dest=/var/www/html 
 
           - name: grant the full permissions on the  index.html file in  the web servers
             file:  dest=/var/www/html/index.html    mode=777

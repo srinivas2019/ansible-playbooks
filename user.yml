@@ -1,0 +1,21 @@
+---
+- hosts: all
+  tasks: 
+         - name: create a user 
+           user:
+                   name: rohith 
+                   
+         
+         - name: create a group 
+           group:
+                   name: devops
+                   gid: 7777
+         
+         
+         - name: create a second user 
+           user:
+                   name: gopi
+                   uid:  9999
+                   groups: devops
+                   comment: "Guest user"
+

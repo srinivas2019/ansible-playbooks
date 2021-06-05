@@ -1,0 +1,11 @@
+---
+- hosts: all
+  tasks: 
+         -  group:
+                   name: "{{ item }}"
+                   state: absent
+            loop:
+                    - oracle
+                    - java
+                    - ruby
+                    - groovy 
